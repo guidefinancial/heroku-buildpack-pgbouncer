@@ -52,6 +52,16 @@ log_connections = ${PGBOUNCER_LOG_CONNECTIONS:-1}
 log_disconnections = ${PGBOUNCER_LOG_DISCONNECTIONS:-1}
 log_pooler_errors = ${PGBOUNCER_LOG_POOLER_ERRORS:-1}
 stats_period = ${PGBOUNCER_STATS_PERIOD:-60}
+cert = /app/vendor/stunnel/etc/stunnel/garantia_user.crt
+key = /app/vendor/stunnel/etc/stunnel/garantia_user_private.key
+cafile = /app/vendor/stunnel/etc/stunnel/garantia_ca.pem
+verify = 2
+delay = yes
+
+[redislabs]
+client = yes
+accept = 127.0.0.1:6379
+connect = pub-redis-11526.us-east-mz.3.ec2.garantiadata.com:11526
 [databases]
 EOFEOF
 
